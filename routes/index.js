@@ -6,9 +6,9 @@ const ips = require('../modules/ips');
 router.get('/', function(req, res, next) {
   console.log(req.ip);
   if(ips.includes(req.ip)) {
-    res.render('index');
+    res.render('index', {ip: req.ip});
   } else {
-    res.render('error');
+    res.render('error', {ip: req.ip});
   }
 });
 
